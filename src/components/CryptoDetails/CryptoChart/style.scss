@@ -1,0 +1,29 @@
+.crypto__chart {
+  rect.highcharts-background {
+    fill: var(--bg-color);
+  }
+
+  g.highcharts-color-0 {
+    > text {
+      fill: var(--text-color) !important;
+    }
+  }
+
+  g.highcharts-axis-labels {
+    > text {
+      fill: var(--text-color) !important;
+    }
+  }
+
+  .highcharts-root {
+    > text {
+      fill: var(--text-color) !important;
+    }
+  }
+
+  g.highcharts-tooltip {
+    > text {
+      fill: black !important;
+    }
+  }
+}

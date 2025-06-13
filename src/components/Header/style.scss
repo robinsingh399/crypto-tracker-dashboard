@@ -1,0 +1,229 @@
+:root {
+  --bg-color: #ffffff;
+  --header-color: #f4f4f4;
+  --text-color: #0d1117;
+  --secondary-text-color: #afafaf;
+  --accent-color: #58a6ff;
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --bg-offwhite-color: whitesmoke;
+  --border-color: #0d1117;
+  --card-border-color: whitesmoke;
+}
+
+.light-mode {
+  --bg-color: #0d1117;
+  --header-color: #161b22;
+  --text-color: #ffffff;
+  --secondary-text-color: #f4f4f4;
+  --accent-color: #005cc5;
+  --bg-offwhite-color: #0d1117;
+  --border-color: #ffffff;
+  --card-border-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+}
+
+.crypto__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-color);
+  color: var(--text-color);
+  padding: 15px 20px;
+  position: relative;
+
+  > a {
+    text-decoration: none;
+  }
+
+  &-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+
+  &-modal-nav,
+  &-nav-links {
+    display: flex;
+    gap: 65px;
+
+    a {
+      position: relative;
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 6px 0;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: var(--accent-color);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 9;
+
+    &.show {
+      display: block;
+    }
+
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-side {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 220px;
+      height: 100%;
+      background-color: var(--header-color);
+      // padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+
+      &.open {
+        left: 0;
+        padding: 20px;
+      }
+    }
+  }
+
+  &-theme {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .crypto__header {
+    &-nav-links {
+      display: none;
+    }
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .theme-toggle-container__label {
+    display: none;
+  }
+}
+
+.theme-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle-checkbox {
+  display: none;
+}
+
+.theme-toggle-label {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label {
+  background-color: #66bb6a;
+}
+
+.theme-toggle-ball {
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label .theme-toggle-ball {
+  transform: translateX(30px);
+}
+
+.preLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

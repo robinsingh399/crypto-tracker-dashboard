@@ -1,0 +1,44 @@
+<svg
+  width="50"
+  height="50"
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+  class="dual-ring-loader"
+>
+  <circle
+    cx="50"
+    cy="50"
+    r="40"
+    stroke="#3b82f6"
+    stroke-width="6"
+    fill="none"
+    stroke-linecap="round"
+    stroke-dasharray="62.8 62.8"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      dur="1s"
+      values="0 50 50;360 50 50"
+      repeatCount="indefinite"
+    />
+  </circle>
+  <circle
+    cx="50"
+    cy="50"
+    r="30"
+    stroke="#10b981"
+    stroke-width="6"
+    fill="none"
+    stroke-linecap="round"
+    stroke-dasharray="47.1 47.1"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      dur="0.6s"
+      values="360 50 50;0 50 50"
+      repeatCount="indefinite"
+    />
+  </circle>
+</svg>

@@ -1,0 +1,16 @@
+.favorite-button {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: white;
+  border: none;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+.favorite-button:hover {
+  transform: scale(1.1);
+}
