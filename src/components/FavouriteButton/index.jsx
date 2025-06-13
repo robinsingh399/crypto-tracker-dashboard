@@ -9,7 +9,7 @@ const FavoriteButton = ({ cardId }) => {
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("favorites")) || [];
     setIsFavorited(saved.includes(cardId));
-  }, []);
+  }, [cardId]);
 
   const toggleFavouriteHandler = (event) => {
     const saved = JSON.parse(localStorage.getItem("favorites")) || [];

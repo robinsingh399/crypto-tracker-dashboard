@@ -26,7 +26,7 @@ export const CryptoDetails = () => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   if (!data) {
     return null;

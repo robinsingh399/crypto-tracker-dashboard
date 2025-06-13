@@ -29,7 +29,7 @@ export const CryptoChart = ({ id }) => {
       }
     };
     fetchChartData();
-  }, []);
+  }, [id]);
 
   return (
     <Chart>
